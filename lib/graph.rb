@@ -8,7 +8,7 @@ class Graph
 		@vertices = Hash.new { |i, j| i[j] = Vertex.new(j, [], Float::INFINITY) }
 		@edges = {}
 
-		graph.each do |(v1, v2, cost)|
+		graph.each do |v1, v2, cost|
 			@vertices[v1].nearby << v2
 			@vertices[v2].nearby << v1
 			@edges[[v1, v2]] = @edges[[v2, v1]] = cost
