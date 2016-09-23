@@ -8,8 +8,6 @@ class Graph
 		@vertices = Hash.new { |i, j| i[j] = Vertex.new(j, [], Float::INFINITY) }
 		@edges = {}
 
-		# i need to iterate the graph and get the
-		# nearby vertices
 		graph.each do |(v1, v2, cost)|
 			@vertices[v1].nearby << v2
 			@vertices[v2].nearby << v1
